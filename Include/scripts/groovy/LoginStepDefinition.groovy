@@ -47,18 +47,19 @@ class LoginStepDefinition {
 	/**
 	 * The step definitions below match with Katalon sample Gherkin steps
 	 */
+
 	@Given("User has opened Swag Labs https://www.saucedemo.com/")
 	def User_has_opened_Swag_Labs() {
 		WebUI.openBrowser('https://www.saucedemo.com/')
+		WebUI.maximizeWindow()
 	}
 
 	@When("Enter valid (.*) and (.*)")
 	def Enter_valid_username_and_password(String username, String password) {
 		WebUI.setText(findTestObject('Object Repository/PageLogin/Page_Swag Labs/input_Swag Labs_user-name'), username)
-		
 		WebUI.setEncryptedText(findTestObject('Object Repository/PageLogin/Page_Swag Labs/input_Swag Labs_password'), password)
 	}
-	
+
 	@And("Click button login")
 	def Click_button_login() {
 		WebUI.click(findTestObject('Object Repository/PageLogin/Page_Swag Labs/input_Swag Labs_login-button'))
@@ -67,6 +68,30 @@ class LoginStepDefinition {
 	@Then("Showing Swag Labs tittle at the top of the page")
 	def Showing_Swag_Labs_tittle_at_the_top_of_the_page() {
 		WebUI.verifyElementPresent(findTestObject('PageLogin/Page_Swag Labs/div_Swag Labs'), 0)
+		WebUI.closeBrowser()
+	}
+	
+	@When("Enter invalid (.*) and (.*)")
+	def Enter_invalid_username_and_password(String username, String password) {
+		WebUI.setText(findTestObject('Object Repository/PageLogin/Page_Swag Labs/input_Swag Labs_user-name'), username)
+		WebUI.setEncryptedText(findTestObject('Object Repository/PageLogin/Page_Swag Labs/input_Swag Labs_password'), password)
+	}
+
+	@Then("Showing alert 'Sorry, this user has been locked out'")
+	def Showing_alert_Sorry_this_user_has_been_locked_out() {
+		WebUI.click(findTestObject('Object Repository/Page_Swag Labs/div_Epic sadface Sorry, this user has been _e43fcb'))
+		WebUI.closeBrowser()
+	}
+	
+	@When("Enter problem (.*) and (.*)")
+	def Enter_problem_username_and_password(String username, String password) {
+		WebUI.setText(findTestObject('Object Repository/PageLogin/Page_Swag Labs/input_Swag Labs_user-name'), username)
+		WebUI.setEncryptedText(findTestObject('Object Repository/PageLogin/Page_Swag Labs/input_Swag Labs_password'), password)
+	}
+
+	@Then("The image is not show-up")
+	def The_image_is_not_show_up() {
+		WebUI.verifyElementPresent(findTestObject('Page_Swag Labs/img_Name (A to Z)_inventory_item_img_1'), 0)
 		WebUI.closeBrowser()
 	}
 }

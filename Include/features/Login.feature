@@ -16,10 +16,10 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
-@tag
+@Functionality
 Feature: Login
   
-  @tag1
+  @TC_BDD_Login001
   Scenario Outline: Verify valid login
     Given User has opened Swag Labs https://www.saucedemo.com/
     When Enter valid <username> and <password>
@@ -29,3 +29,25 @@ Feature: Login
     Examples: 
       | username  | password |
       | standard_user | qcu24s4901FyWDTwXGr6XA== |
+      
+  @TC_BDD_Login002
+  Scenario Outline: Verify invalid login
+    Given User has opened Swag Labs https://www.saucedemo.com/
+    When Enter invalid <username> and <password>
+    And Click button login
+    Then Showing alert 'Sorry, this user has been locked out'
+
+    Examples: 
+      | username  | password |
+      | locked_out_user | qcu24s4901FyWDTwXGr6XA== |
+      
+   @TC_BDD_Login003
+   Scenario Outline: Verify problem login
+    Given User has opened Swag Labs https://www.saucedemo.com/
+    When Enter problem <username> and <password>
+    And Click button login
+    Then The image is not show-up
+
+    Examples: 
+      | username  | password |
+      | problem_user | qcu24s4901FyWDTwXGr6XA== |
