@@ -35,7 +35,7 @@ Feature: Login
     Given User has opened Swag Labs https://www.saucedemo.com/
     When Enter invalid <username> and <password>
     And Click button login
-    Then Showing alert 'Sorry, this user has been locked out'
+    Then Showing alert Sorry, this user has been locked out
 
     Examples: 
       | username  | password |

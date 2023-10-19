@@ -70,19 +70,19 @@ class LoginStepDefinition {
 		WebUI.verifyElementPresent(findTestObject('PageLogin/Page_Swag Labs/div_Swag Labs'), 0)
 		WebUI.closeBrowser()
 	}
-	
+
 	@When("Enter invalid (.*) and (.*)")
 	def Enter_invalid_username_and_password(String username, String password) {
 		WebUI.setText(findTestObject('Object Repository/PageLogin/Page_Swag Labs/input_Swag Labs_user-name'), username)
 		WebUI.setEncryptedText(findTestObject('Object Repository/PageLogin/Page_Swag Labs/input_Swag Labs_password'), password)
 	}
 
-	@Then("Showing alert 'Sorry, this user has been locked out'")
+	@Then("Showing alert Sorry, this user has been locked out")
 	def Showing_alert_Sorry_this_user_has_been_locked_out() {
 		WebUI.click(findTestObject('Object Repository/Page_Swag Labs/div_Epic sadface Sorry, this user has been _e43fcb'))
 		WebUI.closeBrowser()
 	}
-	
+
 	@When("Enter problem (.*) and (.*)")
 	def Enter_problem_username_and_password(String username, String password) {
 		WebUI.setText(findTestObject('Object Repository/PageLogin/Page_Swag Labs/input_Swag Labs_user-name'), username)
