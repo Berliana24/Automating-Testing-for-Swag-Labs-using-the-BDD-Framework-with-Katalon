@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "CCEA09485BB1F8762DF5C98685E46B62",
+  "keywordFileContentHash": "FF9DBFFFB05EE49AA9F2DCF48A1D7041",
   "keywordClasses": [
     {
       "name": "Checkout01StepDefinition",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }
