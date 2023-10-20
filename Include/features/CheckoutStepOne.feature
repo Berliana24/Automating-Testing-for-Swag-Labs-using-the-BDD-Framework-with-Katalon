@@ -19,7 +19,7 @@
 @Functionality
 Feature: Checkout01
 
-  @TC_BDD_Checkout001
+  @TC_BDD_Checkout01001
   Scenario Outline: Verify checkout
     Given User has opened Swag Labs https://www.saucedemo.com/
     When Enter valid <username> and <password>

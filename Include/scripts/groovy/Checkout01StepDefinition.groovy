@@ -55,12 +55,12 @@ class Checkout01StepDefinition {
 
 	@Then("See the number of products in the cart increase in the Cart Icon")
 	def See_the_number_of_products_in_Cart_Icon() {
-		WebUI.verifyElementPresent(findTestObject('Page_Swag Labs/icon_cart'), 0)
+		WebUI.verifyElementPresent(findTestObject('Page_Swag Labs/a_1'), 0)
 	}
 
 	@When("Click the cart icon")
 	def Click_the_Cart_Icon() {
-		WebUI.click(findTestObject('Object Repository/Page_Swag Labs/icon_cart'))
+		WebUI.click(findTestObject('Object Repository/Page_Swag Labs/a_1'))
 	}
 
 	@Then("Will be redirected to the cart page")
@@ -88,7 +88,7 @@ class Checkout01StepDefinition {
 	@And("fills valid (.*), (.*) and (.*)")
 	def fills_valid_first_name_last_name_and_code_form(String first_name, String last_name, String postalCodeString) {
 		int postalCode = postalCodeString.toInteger()
-			
+
 		WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Checkout Your Information_firstName'), first_name)
 		WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Checkout Your Information_lastName'), last_name)
 		WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Checkout Your Information_postalCode'), postalCode.toString())
