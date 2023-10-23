@@ -88,7 +88,7 @@ class Checkout01StepDefinition {
 	@And("fills valid (.*), (.*) and (.*)")
 	def fills_valid_first_name_last_name_and_code_form(String first_name, String last_name, String postalCodeString) {
 		int postalCode = postalCodeString.toInteger()
-			
+
 		WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Checkout Your Information_firstName'), first_name)
 		WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Checkout Your Information_lastName'), last_name)
 		WebUI.setText(findTestObject('Object Repository/Page_Swag Labs/input_Checkout Your Information_postalCode'), postalCode.toString())

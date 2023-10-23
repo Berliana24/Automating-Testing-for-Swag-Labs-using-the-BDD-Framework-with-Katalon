@@ -50,7 +50,8 @@ class LoginStepDefinition {
 
 	@Given("User has opened Swag Labs https://www.saucedemo.com/")
 	def User_has_opened_Swag_Labs() {
-		WebUI.openBrowser('https://www.saucedemo.com/')
+		WebUI.openBrowser('')
+		WebUI.navigateToUrl(GlobalVariable.baseUrl)
 		WebUI.maximizeWindow()
 	}
 

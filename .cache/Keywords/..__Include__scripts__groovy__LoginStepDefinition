@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "keywordFileContentHash": "50A371BEBCED7EA3C3B362DF91B032F8",
+=======
+  "keywordFileContentHash": "7EEB206C69F7DA3FD63F558192591F6D",
+>>>>>>> 1401108 (Test Case Login)
   "keywordClasses": [
     {
       "name": "LoginStepDefinition",
