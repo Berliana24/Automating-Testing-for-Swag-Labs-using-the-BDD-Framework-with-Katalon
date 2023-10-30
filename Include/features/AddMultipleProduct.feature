@@ -34,3 +34,4 @@ Feature: Add Multiple Product Functionality
     Examples:
   		| username      | password                 | 
  			| standard_user | qcu24s4901FyWDTwXGr6XA== |
+    
