@@ -43,32 +43,16 @@ import cucumber.api.java.en.When
 
 
 
-class Checkout02StepDefinition {
+class AddOneProductStepDefinition {
 	/**
 	 * The step definitions below match with Katalon sample Gherkin steps
 	 */
-
-	@And("See the detail product in checkout step two page with the information of payment, shipping, price total and total")
+	@And("See one product in cart with the details of the previously added product")
 	def See_the_detail_product() {
-		WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Swag Labs/card_detail_product'), 0)
+		WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Swag Labs/title_product_in_cart'), 0)
+		WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Swag Labs/description_product_in_cart'), 0)
+		WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Swag Labs/price_product_in_cart'), 0)
 
-		WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Swag Labs/div_Payment Information'), 0)
-
-		WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Swag Labs/div_Shipping Information'), 0)
-
-		WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Swag Labs/div_Price Total'), 0)
-
-		WebUI.verifyElementPresent(findTestObject('Object Repository/Page_Swag Labs/div_Total 32.39'), 0)
-	}
-
-	@When("Click finish button")
-	def Click_finish_button() {
-		WebUI.click(findTestObject('Page_Swag Labs/button_Finish'))
-	}
-
-	@Then("See the message thank you for your order!")
-	def See_the_message() {
-		WebUI.verifyElementPresent(findTestObject('Page_Swag Labs/h2_Thank you for your order'), 0)
 		WebUI.closeBrowser()
 	}
 }
