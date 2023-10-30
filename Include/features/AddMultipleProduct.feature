@@ -17,28 +17,20 @@
 ## (Comments)
 #Sample Feature Definition Template
 @Functionality
-Feature: Checkout01
+Feature: Add Multiple Product Functionality
 
-  @TC_BDD_Checkout01001
-  Scenario Outline: Verify checkout
+  @TC_BDD_AddMultipleProduct001
+  Scenario Outline: Add multiple product to cart page
     Given User has opened Swag Labs https://www.saucedemo.com/
     When Enter valid <username> and <password>
     And Click button login
     
     When Click the Add to Cart button on the inventory page
-    Then See the number of products in the cart increase in the Cart Icon
-    
-    When Click the cart icon
+    And Click another Add to Cart button on the inventory page
+    And Click the cart icon
     Then Will be redirected to the cart page
-    And See the details of the previously added product, including the product name, product description, and product price
-    
-    When Click Checkout button
-    Then Will be redirected to the checkout step one page
-    And fills valid <first_name>, <last_name> and <postalCode>
-    And Click Continue button
-    Then Will be redirected to the checkout overview page
-    
+    And See two product with each details of the previously added product
+
     Examples:
-  		| username      | password                 | first_name | last_name | postalCode |
- 			| standard_user | qcu24s4901FyWDTwXGr6XA== | Berliana   | Laurenza  | 89768      |
-    
+  		| username      | password                 | 
+ 			| standard_user | qcu24s4901FyWDTwXGr6XA== |
